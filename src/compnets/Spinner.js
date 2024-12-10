@@ -3,9 +3,9 @@ import  css from './Spinner.css';
 
 export default function Spinner() {
   return (
-    <div>
+    <div className='flex flex-col items-center space-y-2'>
            <div className='Spinner'></div>
-           <p>Loading...</p>
+           <p className=' text-lg font-semibold  text-white '>Loading...</p>
           
         
     

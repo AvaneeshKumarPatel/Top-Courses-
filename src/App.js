@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+ import { useEffect, useState } from 'react';
  import Cards from './compnets/Cards.js';
  import Filter from './compnets/Filter';
  import Navbar from './compnets/Navbar.js'; 
@@ -58,22 +58,29 @@ async function getData(){
   
 
   return (
-     <div>
+     <div className='min-h-screen flex flex-col  bg-slate-800 '>
        
           <div>
             <Navbar/>
           </div>
 
-           <div>
+             <div className='bg-slate-800'>
+
+           <div  className=' flex justify-center items-center flex-wrap'>
             <Filter FilterData={FilterData}/> 
           </div>
 
-              <div>
+              <div className='w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center items-center min-h-[50vh]'>
                {
                 Loading ? (<Spinner/>) : (<Cards Courses={Courses}/>)
                  }
 
               </div>
+             </div>
+
+
+
+           
 
       </div>
 
