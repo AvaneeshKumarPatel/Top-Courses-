@@ -12,11 +12,8 @@
 
   
  const[Courses, setCourses] = useState(null);
-  
- //console.log(Courses , 'After setCourse data of api' );
-
  const[Loading , setLoading] = useState(true)
-
+ const[category,setCategory] = useState([FilterData[0].title])
 
 
 // API calling 
@@ -67,12 +64,18 @@ async function getData(){
              <div className='bg-slate-800'>
 
            <div  className=' flex justify-center items-center flex-wrap'>
-            <Filter FilterData={FilterData}/> 
+            <Filter 
+            FilterData={FilterData} 
+            category={category} 
+            setCategory={setCategory}
+            /> 
+
+
           </div>
 
               <div className='w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center items-center min-h-[50vh]'>
                {
-                Loading ? (<Spinner/>) : (<Cards Courses={Courses}/>)
+                Loading ? (<Spinner/>) : (<Cards Courses={Courses} category={category}/>)
                  }
 
               </div>
